@@ -19,7 +19,6 @@
 #include "buffer.h"
 #include "inet.h"
 #include "tcp.h"
-#include "udp.h"
 #include "select.h"
 
 /*-------------------------------------------------------------------------*\
@@ -39,7 +38,6 @@ static const luaL_Reg mod[] = {
     {"buffer", buffer_open},
     {"inet", inet_open},
     {"tcp", tcp_open},
-    {"udp", udp_open},
     {"select", select_open},
     {NULL, NULL}
 };
@@ -95,6 +93,7 @@ static int base_open(lua_State *L) {
 
 /*-------------------------------------------------------------------------*\
 * Initializes all library modules.
+* Due to static link, this method should be registered in any Lua state as requireSockets
 \*-------------------------------------------------------------------------*/
 LUASOCKET_API int luaopen_socket_core(lua_State *L) {
     int i;
