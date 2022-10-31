@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.0)
 project(lua)
 # This script has taken from https://raw.githubusercontent.com/walterschell/Lua/master/lua-5.4.4/CMakeLists.txt
 set(LUA_LIB_lua-5.4.4S
